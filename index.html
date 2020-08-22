@@ -7,6 +7,9 @@
 </head>
 <body>
     <script>
+      console.log(game());
+      function game(){
+
         //computer chooses rock, paper, or scissors
         function computerPlay(){
             const selections = ["Rock", "Paper", "Scissors"];
@@ -75,21 +78,76 @@
         }
 
         //if player won, add point to their score
-        //if computer won, add poitn to its score
+        //if computer won, add point to its score
         //repeat choice
-        let playerPoints = 0;
 
-        while (playerPoints < 5){
-            console.log(playRound(playerPlay, computerPlay));
+        let playerPoints = 0, computerPoints = 0;
 
-            if (playRound == "You Win! Rock Beats Scissors" || playRound == "You Win! Paper Beats Rock" || playRound == "You Win! Scissors Beats Paper"){
-                playerPoints++;
-            }
-            
-            console.log("Player Points: " + playerPoints);
+        while (playerPoints < 5 && computerPoints < 5){
+          let playerSelection = playerPlay();
+          let computerSelection = computerPlay();
+          
+          let result = playRound(playerSelection, computerSelection);
+          console.log(result);
 
+          switch(result){
+            case "You Win! Rock Beats Scissors":
+            case "You Win! Paper Beats Rock":
+            case "You Win! Scissors Beats Paper":
+              playerPoints++;
+              break;
+            case "You Lose! Paper Beats Rock":
+            case "You Lose! Scissors Beats Paper":
+            case "You Lose! Rock Beats Scissors":
+              computerPoints++;
+              break;
+          }
+
+          console.log("Player Points: " + playerPoints);
+          console.log("Computer Points: " + computerPoints);
+
+          //if..else statement
+          /*
+          if (result == "You Win! Rock Beats Scissors" || result == "You Win! Paper Beats Rock" || result == "You Win! Scissors Beats Paper"){
+            playerPoints++;
+          }
+          else if (result == "You Lose! Paper Beats Rock" || result == "You Lose! Scissors Beats Paper" || result == "You Lose! Rock Beats Scissors"){
+            computerPoints++;
+          }
+          */
         }
+
         //first one to 5 points, wins
+          if (playerPoints == 5){
+            alert("Congratulations! You won the tournament!");
+            let playAgain = confirm("Play Again?");
+            if (playAgain == true){
+              console.clear();
+              game();
+            }
+            else {
+              console.clear();
+              console.log("(•w•)b");
+              alert("Thanks.. thanks for playing my game.")
+            }
+          }
+          else if (computerPoints == 5){
+            alert("Sorry.. You lost the tournament...");
+            let playAgain = confirm("Play Again?");
+            if (playAgain == true){
+              console.clear();
+              game();
+            }
+            else {
+              console.clear();
+              console.log("(•w•)b");
+              alert("Thanks.. thanks for playing my game.")
+            }
+          }
+
+      }  
+
     </script>    
 </body>
 </html>
+
