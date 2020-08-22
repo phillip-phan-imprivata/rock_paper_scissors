@@ -80,13 +80,10 @@
         let playerPoints = 0;
 
         while (playerPoints < 5){
-            let computerSelection = computerPlay();
-            let playerSelection = playerPlay();
-
-            console.log(playRound(playerSelection, computerSelection));
+            console.log(playRound(playerPlay, computerPlay));
 
             if (playRound == "You Win! Rock Beats Scissors" || playRound == "You Win! Paper Beats Rock" || playRound == "You Win! Scissors Beats Paper"){
-                return playerPoints++;
+                playerPoints++;
             }
             
             console.log("Player Points: " + playerPoints);
