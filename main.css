@@ -1,0 +1,83 @@
+html{
+    height: 100%;
+    min-height: 100%;
+}
+
+body{
+    font: 25px Comic Sans MS, Helvetica, sans-serif;
+    background: #0A7CEC;
+    color: #000;
+    overflow: hidden;
+}
+
+/*Global*/
+.container{
+    margin: auto;
+    text-align: center;
+}
+
+/*Body Content*/
+h1{
+    font: 50px comic Sans MS, Helvetica, sans-serif;
+    margin-bottom: 10px;
+    color: #01DFBA;
+    text-shadow: 0px 5px 6px #000;
+}
+
+#playerPrompt{
+    border-radius: 20px;
+    background: rgb(38, 0, 111);    
+    padding: 10px 30px;
+    color: #FB2DF1;
+    outline: none;
+    border: none;
+    font: 15px comic Sans MS, Helvetica, sans-serif;
+    -webkit-box-shadow: 0 10px 6px -6px #000;
+	-moz-box-shadow: 0 10px 6px -6px #000;
+	box-shadow: 0 10px 6px -6px #000;
+}
+
+img{
+    margin: 20px 20px;
+    border-radius: 20px;
+    -webkit-box-shadow: 0 10px 6px -6px #000;
+	-moz-box-shadow: 0 10px 6px -6px #000;
+	box-shadow: 0 10px 6px -6px #000;
+}
+
+#display{
+    display: grid;
+    grid-template-areas: 
+    "playerChoice computerChoice"
+    "msg msg"
+    "playerScore computerScore";
+    margin: auto;
+    align-self: center;
+    width: 25em;
+    height: 11em;
+    border-radius: 20px;
+    text-align: center;
+    -webkit-box-shadow: 0 10px 6px -6px #000;
+	-moz-box-shadow: 0 10px 6px -6px #000;
+	box-shadow: 0 10px 6px -6px #000;
+}
+
+#playerChoice{
+    grid-area: playerChoice;
+}
+
+#computerChoice{
+    grid-area: computerChoice;
+}
+
+#msg{
+    grid-area: msg;
+}
+
+#playerScore{
+    grid-area: playerScore;
+}
+
+#computerScore{
+    grid-area: computerScore;
+}
